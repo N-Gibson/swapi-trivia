@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import { apiCalls } from './apiCalls'
+import { apiCalls } from './apiCalls';
+import Splash from '../splash/splash';
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       movies: [],
-      loading: true
+      loading: true,
+      name: '',
+      favQuote: '',
+      rank: ''
     }
   }
 
@@ -18,10 +23,14 @@ class App extends Component {
     // console.log("Head", apiCalls(swapiFilmsUrl))
   }
 
+  handleForm(formName, formQuote, formRank) {
+    this.setState({ name: formName, favQuote: formQuote, rank: formRank})
+  }
+
   render() {
     return (
       <main>
-        hello
+        <Splash handleForm={this.handleForm}/>
       </main>
     )
   }
