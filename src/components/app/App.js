@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { apiCalls } from './apiCalls';
 import Splash from '../splash/splash';
-
+import Movies from '../movies/movies'
+import Nav from '../nav/nav'
 
 class App extends Component {
   constructor() {
@@ -38,7 +39,9 @@ class App extends Component {
     console.log(this.state)
     return (
       <main>
-        <Splash handleForm={this.handleForm}/>
+        {/* <Splash handleForm={this.handleForm}/> */}
+        <Nav />
+        <Movies />
       </main>
     )
   }
