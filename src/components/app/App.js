@@ -12,7 +12,8 @@ class App extends Component {
       loading: true,
       name: '',
       favQuote: '',
-      rank: ''
+      rank: '',
+      formError: ''
     }
   }
 
@@ -23,11 +24,18 @@ class App extends Component {
     // console.log("Head", apiCalls(swapiFilmsUrl))
   }
 
-  handleForm(formName, formQuote, formRank) {
-    this.setState({ name: formName, favQuote: formQuote, rank: formRank})
+  handleForm = (formName, formQuote, formRank) => {
+    if(formName === '' || formQuote === '') {
+      // console.log("it's empty")
+      this.setState({error: 'Fill it all!'})
+    } else {
+      this.setState({ name: formName, favQuote: formQuote, rank: formRank, error: ''})
+      
+    }
   }
 
   render() {
+    console.log(this.state)
     return (
       <main>
         <Splash handleForm={this.handleForm}/>
