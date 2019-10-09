@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { apiCalls } from '../../apiCalls'
+import { apiCalls } from './apiCalls'
 
 class App extends Component {
   constructor() {
@@ -14,7 +14,8 @@ class App extends Component {
   componentDidMount() {
     const swapiFilmsUrl = 'https://swapi.co/api/films';
     apiCalls(swapiFilmsUrl)
-      .then(data => this.setState({ movies: data, loading: false }))
+      .then(res => console.log("DATA", res))
+    // console.log("Head", apiCalls(swapiFilmsUrl))
   }
 
   render() {
