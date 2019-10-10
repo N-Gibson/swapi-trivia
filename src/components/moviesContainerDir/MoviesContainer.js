@@ -1,9 +1,9 @@
 import React from 'react'
-import './movies.css'
-import MovieCard from '../movieCard/movieCard'
+// import './MoviesContainer.css'
+import MovieCard from '../movieCardDir/movieCard'
 
 
-const Movies = (props) => {
+const MoviesContainer = (props) => {
   console.log("props.movies[0]", props.movies[0])
   return (
     <section>
@@ -13,6 +13,7 @@ const Movies = (props) => {
           image={movie.image}
           title={movie.title}
           releaseDate={movie.release_date}
+          id={movie.episode_id}
           key={movie.episode_id}
         />
       })}
@@ -20,4 +21,4 @@ const Movies = (props) => {
   )
 }
 
-export default Movies
+export default MoviesContainer
