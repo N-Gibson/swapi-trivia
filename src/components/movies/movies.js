@@ -3,12 +3,19 @@ import './movies.css'
 import MovieCard from '../movieCard/movieCard'
 
 
-const Movies = () => {
-
+const Movies = (props) => {
+  console.log("props.movies[0]", props.movies[0])
   return (
     <section>
-      //Movie Card Componen
-      <MovieCard />
+      {props.movies.map(movie => {
+        console.log(movie.image)
+        return <MovieCard 
+          image={movie.image}
+          title={movie.title}
+          releaseDate={movie.release_date}
+          key={movie.episode_id}
+        />
+      })}
     </section>
   )
 }

@@ -4,9 +4,9 @@ export const apiCalls = (swapiFilmsUrl) => {
     .then(films => {
       const { results } = films;
       const filmData = results.map(movie => {
-        const { characters, opening_crawl, release_date, title } = movie;
+        const { characters, episode_id, opening_crawl, release_date, title } = movie;
         return getCharacters(characters)
-          .then(characters => ({characters, opening_crawl, release_date, title}))
+          .then(characters => ({characters, episode_id, opening_crawl, release_date, title}))
       })
       return Promise.all(filmData)
     })
