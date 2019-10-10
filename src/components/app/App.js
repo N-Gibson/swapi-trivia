@@ -23,20 +23,20 @@ class App extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   const swapiFilmsUrl = 'https://swapi.co/api/films';
-  //   apiCalls(swapiFilmsUrl)
-  //     .then(films => {
-  //       return films.sort((a, b) => {
-  //         return a.episode_id - b.episode_id
-  //       })
-  //     })
-  //     .then(films => {
-  //       return films.map((film, index) => ({...film, image: imageUrls[index]}))
-  //     })
-  //     .then(films => this.setState({movies: films}))
+  componentDidMount() {
+    const swapiFilmsUrl = 'https://swapi.co/api/films';
+    apiCalls(swapiFilmsUrl)
+      .then(films => {
+        return films.sort((a, b) => {
+          return a.episode_id - b.episode_id
+        })
+      })
+      .then(films => {
+        return films.map((film, index) => ({...film, image: imageUrls[index]}))
+      })
+      .then(films => this.setState({movies: films}))
       
-  // }
+  }
 
   handleForm = (formName, formQuote, formRank) => {
     if(formName === '' || formQuote === '') {
