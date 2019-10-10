@@ -2,13 +2,13 @@ import React from 'react'
 import './movieCard.css'
 
 
-const MovieCard = () => {
-
+const MovieCard = (props) => {
+  console.log("movieCard", props)
   return (
     <article>
-      <img src='' />
-      <h2>Hey</h2>
-      <h3>hey 2</h3>
+      <img src={props.image} />
+      <h2>{props.title}</h2>
+      <h3>{props.releaseDate}}</h3>
     </article>
   )
 }

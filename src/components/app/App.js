@@ -4,6 +4,8 @@ import { apiCalls } from './apiCalls';
 import Splash from '../splash/splash';
 import Movies from '../movies/movies'
 import Nav from '../nav/nav'
+import imageUrls from './imageUrls'
+import SampleData from './SampleData'
 
 class App extends Component {
   constructor() {
@@ -21,8 +23,16 @@ class App extends Component {
   componentDidMount() {
     const swapiFilmsUrl = 'https://swapi.co/api/films';
     apiCalls(swapiFilmsUrl)
-      .then(res => console.log("DATA", res))
-    // console.log("Head", apiCalls(swapiFilmsUrl))
+      .then(films => {
+        return films.sort((a, b) => {
+          return a.episode_id - b.episode_id
+        })
+      })
+      .then(films => {
+        return films.map((film, index) => ({...film, image: imageUrls[index]}))
+      })
+      .then(films => this.setState({movies: films}))
+      
   }
 
   handleForm = (formName, formQuote, formRank) => {
@@ -36,12 +46,14 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
+    console.log("state", this.state.movies)
     return (
       <main>
         {/* <Splash handleForm={this.handleForm}/> */}
         <Nav />
-        <Movies />
+        <Movies 
+          movies={this.state.movies} 
+          />
       </main>
     )
   }
