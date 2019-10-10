@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { apiCalls } from './apiCalls';
+import { Route } from 'react-router-dom'
 import Splash from '../splash/splash';
 import Movies from '../movies/movies'
 import Nav from '../nav/nav'
