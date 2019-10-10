@@ -7,6 +7,7 @@ import MoviesContainer from '../moviesContainerDir/MoviesContainer'
 import Nav from '../nav/nav'
 import imageUrls from './imageUrls'
 import SampleData from './SampleData'
+import CharacterContainer from '../characterContainerDir/CharacterContainer';
 
 
 class App extends Component {
@@ -56,7 +57,12 @@ class App extends Component {
         <Route exact path='/movies' render={() => {
           return <MoviesContainer movies={this.state.movies} />
         }} />
-        {/* <Route exact path='/movies/:id/characters' */}
+      <Route exact path='/movies/:id/characters' render={({match}) => {
+        const { id } = match.params
+        const characters = this.state.movies.find(movie => movie.episode_id === parseInt(id)).characters
+
+        return (<CharacterContainer characters={characters}/>)
+      }} />
         
 
       </main>
