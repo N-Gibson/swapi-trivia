@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Star-Jedi";
+  src: url('../../fonts/starjedi-webfont.woff') format('woff')
+}
+
 .App {
   text-align: center;
 }
@@ -22,5 +27,6 @@
 }
 
 nav, section {
-  background-image: url('https://thumbs.gfycat.com/FeistyJaggedBuffalo-size_restricted.gif');
+  background-image: url('https://media.giphy.com/media/hsITL773u90X6KprRR/giphy.gif');
+  background-size: auto;
 }
