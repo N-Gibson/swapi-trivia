@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './characters.css';
 
 const Character = (props) => {
   let { films, homeworld, name, species } = props.character
@@ -9,7 +10,8 @@ const Character = (props) => {
   let characterFilms = films.map(film => <p>{film}</p>)
 
   return (
-    <article>
+    <article className='character-card'>
+      <button type='button'> ⭐</button>
       <p>{name}</p>
       <p>{homeworld[0]}</p>
       <p>{homeworld[1]}</p>

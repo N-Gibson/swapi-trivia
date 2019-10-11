@@ -1,0 +1,9 @@
+.movie-container {
+  background-image: url('https://thumbs.gfycat.com/FeistyJaggedBuffalo-size_restricted.gif');
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  /* margin: 40px; */
+  min-height: 100vh;
+  padding: 40px;
+}
