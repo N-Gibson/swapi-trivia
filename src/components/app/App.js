@@ -7,7 +7,7 @@ import MoviesContainer from '../moviesContainerDir/MoviesContainer'
 import Nav from '../nav/nav'
 import imageUrls from './imageUrls'
 import SampleData from './SampleData'
-import CharacterContainer from '../characterContainerDir/CharacterContainer';
+import CharacterContainer from '../characterContainerDir/characterContainer.js';
 
 
 class App extends Component {
