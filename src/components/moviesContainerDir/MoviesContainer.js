@@ -1,12 +1,12 @@
 import React from 'react'
-// import './MoviesContainer.css'
+import './MoviesContainer.css'
 import MovieCard from '../movieCardDir/movieCard'
 
 
 const MoviesContainer = (props) => {
   console.log("props.movies[0]", props.movies[0])
   return (
-    <section>
+    <section className='movie-container'>
       {props.movies.map(movie => {
         console.log(movie.image)
         return <MovieCard 
