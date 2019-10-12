@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './characters.css';
+import './characters.scss';
 
 const Character = (props) => {
   let { films, homeworld, name, species } = props.character

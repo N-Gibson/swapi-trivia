@@ -1,5 +1,5 @@
 import React from 'react'
-import './MoviesContainer.css'
+import './MoviesContainer.scss'
 import MovieCard from '../movieCardDir/movieCard'
 
 
