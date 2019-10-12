@@ -77,7 +77,10 @@ class App extends Component {
       }} />
       <Route exact path='/movies/characters/favorites' render={() => {
         return (
-          <FavoritesContainer characters={this.state.movies} />
+          <FavoritesContainer characters={this.state.movies.reduce((acc, movie) => {
+            acc.push(...movie.characters)
+            return acc
+          }, [])} />
         )
       }} />
       </main>
