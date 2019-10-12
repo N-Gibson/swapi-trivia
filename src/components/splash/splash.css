@@ -64,7 +64,27 @@ form {
   outline: none;
 }
 
-.jedi-icon {
+.jedi-btn:hover {
+  box-shadow: 0px 0px 50px 15px rgba(0, 0, 225, .75);
+  background-color: rgba(0, 0, 225, .75);
+}
+
+.jedi-btn:focus {
+  box-shadow: 0px 0px 50px 15px rgba(0, 0, 225, .75);
+  background-color: rgba(0, 0, 225, .75);
+}
+
+.sith-btn:hover {
+  box-shadow: 0px 0px 50px 15px rgba(255, 0, 0, .75);
+  background-color: rgba(255, 0, 0, .75)
+}
+
+.sith-btn:focus {
+  box-shadow: 0px 0px 50px 15px rgba(255, 0, 0, .75);
+  background-color:rgba(255, 0, 0, .75);
+}
+
+.order-icon {
   height: 80%;
   width: 80%;
   border-radius: 0;
@@ -88,4 +108,13 @@ select {
   font-size: 2em;
   border: none;
   /* border-radius: 50px; */
+}
+
+#jediColor {
+  color: blue;
+}
+
+#sithColor {
+  color: red;
+
 }
