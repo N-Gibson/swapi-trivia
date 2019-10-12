@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import { apiCalls } from './apiCalls';
 import { Route } from 'react-router-dom'
 import Splash from '../splash/splash';
@@ -19,23 +19,31 @@ class App extends Component {
       name: '',
       favQuote: '',
       rank: '',
-      formError: ''
+      formError: '',
+      orderColor: ''
     }
   }
 
-  componentDidMount() {
-    const swapiFilmsUrl = 'https://swapi.co/api/films';
-    apiCalls(swapiFilmsUrl)
-      .then(films => {
-        return films.sort((a, b) => {
-          return a.episode_id - b.episode_id
-        })
-      })
-      .then(films => {
-        return films.map((film, index) => ({...film, image: imageUrls[index]}))
-      })
-      .then(films => this.setState({movies: films}))
-      
+  // componentDidMount() {
+  //   const swapiFilmsUrl = 'https://swapi.co/api/films';
+  //   apiCalls(swapiFilmsUrl)
+  //     .then(films => {
+  //       return films.sort((a, b) => {
+  //         return a.episode_id - b.episode_id
+  //       })
+  //     })
+  //     .then(films => {
+  //       return films.map((film, index) => ({...film, image: imageUrls[index]}))
+  //     })
+  //     .then(films => this.setState({movies: films}))
+  // }
+
+  handleOrderColor = (event) => {
+    if(event.target.parentNode.className.includes('jedi-btn')) {
+      this.setState({orderColor: 'jediColor'})
+    } else if(event.target.parentNode.className.includes('sith-btn')) {
+      this.setState({orderColor: 'sithColor'})
+    }
   }
 
   handleForm = (formName, formQuote, formRank) => {
@@ -49,11 +57,14 @@ class App extends Component {
   }
 
   render() {
-    console.log("state", this.state.movies)
+    console.log("state", this.state.orderColor)
     return (
       <main>
-        <Route exact path='/' render={() => <Splash handleForm={this.handleForm}/>} />
-        <Nav />
+        <Route exact path='/' render={() => <Splash 
+        handleForm={this.handleForm} 
+        handleOrderColor={this.handleOrderColor} 
+        orderColor={this.state.orderColor} /> } />
+        {/* <Nav /> */}
         <Route exact path='/movies' render={() => {
           return <MoviesContainer movies={this.state.movies} />
         }} />
