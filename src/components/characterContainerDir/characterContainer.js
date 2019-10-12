@@ -3,7 +3,7 @@ import CharacterCard from '../characters/CharacterCard';
 import './characterContainer.scss'
 
 const CharacterContainer = (props) => {
-  const character = props.characters.map(character => <CharacterCard character={character}/>)
+  const character = props.characters.map(character => <CharacterCard character={character} favoriteCharacter={props.favoriteCharacter}/>)
   return (
     <section className='character-container'>
       {character}

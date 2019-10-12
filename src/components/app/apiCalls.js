@@ -29,8 +29,9 @@ const getCharacters = (characters) => {
     .then(char => {
       const {films, homeworld, name, species } = char
       let isFavorite = false
+      let id = Date.now();
       return getSpecies(species)
-        .then(species => ({films, homeworld, name, species, isFavorite}))
+        .then(species => ({films, homeworld, name, species, isFavorite, id}))
     })
   })
   return Promise.all(charactersData)

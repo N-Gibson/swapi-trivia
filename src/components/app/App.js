@@ -21,7 +21,8 @@ class App extends Component {
       favQuote: '',
       rank: '',
       formError: '',
-      orderColor: ''
+      orderColor: '',
+      favoriteCharacters: []
     }
   }
 
@@ -57,8 +58,18 @@ class App extends Component {
     }
   }
 
+  favoriteNewCharacter = (e) => {
+    let characters= this.state.movies.reduce((acc, movie) => {
+      acc.push(...movie.characters)
+      return acc
+    }, [])
+    let foundCharacters = characters.filter(character => character.name === e.target.parentNode.children[1].innerText)
+    
+    
+  }
+
   render() {
-    console.log("state", this.state.orderColor)
+    console.log("state", this.state)
     return (
       <main>
         <Route exact path='/' render={() => <Splash 
@@ -73,7 +84,7 @@ class App extends Component {
         const { id } = match.params
         const characters = this.state.movies.find(movie => movie.episode_id === parseInt(id)).characters
 
-        return (<CharacterContainer characters={characters}/>)
+        return (<CharacterContainer characters={characters}  favoriteCharacter={this.favoriteNewCharacter}/>)
       }} />
       <Route exact path='/movies/characters/favorites' render={() => {
         return (
