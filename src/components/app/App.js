@@ -59,20 +59,18 @@ class App extends Component {
   }
 
   favoriteNewCharacter = (e) => {
-    let currentFavorites = this.state.favoriteCharacters;
+    // let currentFavorites = this.state.favoriteCharacters;
 
     let characters= this.state.movies.reduce((acc, movie) => {
       acc.push(...movie.characters)
       return acc
     }, [])
-    let foundCharacters = characters.filter(character => character.name === e.target.parentNode.children[1].innerText).map(character => {
-      return ({films: character.films, homeworld: character.homeworld, id: character.id, isFavorite: true, name: character.name, species: character.species})
-    })
-    
-    currentFavorites.push(...foundCharacters)
-    
-    this.setState({favoriteCharacters: currentFavorites})
-    console.log('favorite characters: ', this.state.favoriteCharacters)
+
+    let movies = this.state.movies.map( movie => movie );
+    let foundCharacter = characters.find(character => character.name === e.target.parentNode.children[1].innerText)
+    let favorited = foundCharacter.isFavorite;
+    foundCharacter.isFavorite = !favorited;
+    this.setState({ movies });
   }
 
   render() {
