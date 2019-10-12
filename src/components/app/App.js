@@ -20,7 +20,7 @@ class App extends Component {
       favQuote: '',
       rank: '',
       formError: '',
-
+      orderColor: ''
     }
   }
 
@@ -39,11 +39,10 @@ class App extends Component {
   // }
 
   handleOrderColor = (event) => {
-    console.log('jedi-event', event.target.className)
     if(event.target.parentNode.className.includes('jedi-btn')) {
-      console.log('Jedi Button!')
+      this.setState({orderColor: 'jediColor'})
     } else if(event.target.parentNode.className.includes('sith-btn')) {
-      console.log('Sith Button!')
+      this.setState({orderColor: 'sithColor'})
     }
   }
 
@@ -58,10 +57,13 @@ class App extends Component {
   }
 
   render() {
-    // console.log("state", this.state.movies)
+    console.log("state", this.state.orderColor)
     return (
       <main>
-        <Route exact path='/' render={() => <Splash handleForm={this.handleForm} handleOrderColor={this.handleOrderColor} />} />
+        <Route exact path='/' render={() => <Splash 
+        handleForm={this.handleForm} 
+        handleOrderColor={this.handleOrderColor} 
+        orderColor={this.state.orderColor} /> } />
         {/* <Nav /> */}
         <Route exact path='/movies' render={() => {
           return <MoviesContainer movies={this.state.movies} />
