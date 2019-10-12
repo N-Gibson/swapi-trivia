@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './splash.css'
+import './splash.scss'
 import jediBold from '../../icons/jedi_bold.svg'
 import sithBold from '../../icons/sith_bold.svg'
 
@@ -16,7 +16,7 @@ const Splash = ({ handleForm, handleOrderColor, orderColor }) => {
       </div>
       <form id={orderColor}>
         <input type='text' placeholder='Enter Name'></input>
-        <h2 className='splash-starwars-h2' id={orderColor} >Jedi or Sith?</h2>
+        <h2 className='splash-starwars-h2' id={orderColor} >Jedi or Sith</h2>
         <div className='jedi-or-sith-div'>
           <button 
             className='order-button jedi-btn' 

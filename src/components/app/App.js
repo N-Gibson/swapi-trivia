@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import { apiCalls } from './apiCalls';
 import { Route } from 'react-router-dom'
 import Splash from '../splash/splash';
