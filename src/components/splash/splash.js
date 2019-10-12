@@ -5,23 +5,29 @@ import jediBold from '../../icons/jedi_bold.svg'
 import sithBold from '../../icons/sith_bold.svg'
 
 
-const Splash = (props) => {
+const Splash = ({ handleForm, handleOrderColor, orderColor }) => {
+  console.log('orderColor', orderColor, handleOrderColor)
   return (
     <section className='splash-container'>
-      <div className='splash-div'>
-      <h1 className='splash-starwars-h1'>Star</h1>
+      <div className='splash-div' >
+      <h1 className='splash-starwars-h1' id={orderColor} >Star</h1>
       <h2 className='splash-starwars-h2'>A Trivia Story</h2>
-      <h1 className='splash-starwars-h1'>Wars</h1>
+      <h1 className='splash-starwars-h1' id={orderColor} >Wars</h1>
       </div>
-      <form>
+      <form id={orderColor}>
         <input type='text' placeholder='Enter Name'></input>
-        <h2 className='splash-starwars-h2'>Jedi or Sith?</h2>
+        <h2 className='splash-starwars-h2' id={orderColor} >Jedi or Sith?</h2>
         <div className='jedi-or-sith-div'>
-          <button className='order-button' type='button'>
-            <img className='jedi-icon' src={jediBold} />
+          <button 
+            className='order-button jedi-btn' 
+            type='button' 
+            onClick={event => handleOrderColor(event)}>
+              <img className='order-icon' src={jediBold} />
           </button>
-          <button className='order-button' type='button'>
-          <img className='jedi-icon' src={sithBold} />
+          <button className='order-button sith-btn' 
+          type='button'
+          onClick={event => handleOrderColor(event)}>
+            <img className='order-icon' src={sithBold} />
           </button>
         </div>
 
