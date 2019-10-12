@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { apiCalls } from './apiCalls';
-import { Route } from 'react-router-dom'
+import { Route } from 'react-router-dom';
 import Splash from '../splash/splash';
-import MoviesContainer from '../moviesContainerDir/MoviesContainer'
-import Nav from '../nav/nav'
-import imageUrls from './imageUrls'
-import SampleData from './SampleData'
-import CharacterContainer from '../characterContainerDir/CharacterContainer.js';
-// import FavoritesContainer from '../FavoritesContainer'
+import MoviesContainer from '../moviesContainerDir/MoviesContainer';
+import Nav from '../nav/nav';
+import imageUrls from './imageUrls';
+import SampleData from './SampleData';
+import CharacterContainer from '../characterContainerDir/characterContainer.js';
+import FavoritesContainer from '../favoritesContainer/FavoritesContainer';
 
 
 class App extends Component {
@@ -25,19 +25,19 @@ class App extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   const swapiFilmsUrl = 'https://swapi.co/api/films';
-  //   apiCalls(swapiFilmsUrl)
-  //     .then(films => {
-  //       return films.sort((a, b) => {
-  //         return a.episode_id - b.episode_id
-  //       })
-  //     })
-  //     .then(films => {
-  //       return films.map((film, index) => ({...film, image: imageUrls[index]}))
-  //     })
-  //     .then(films => this.setState({movies: films}))
-  // }
+  componentDidMount() {
+    const swapiFilmsUrl = 'https://swapi.co/api/films';
+    apiCalls(swapiFilmsUrl)
+      .then(films => {
+        return films.sort((a, b) => {
+          return a.episode_id - b.episode_id
+        })
+      })
+      .then(films => {
+        return films.map((film, index) => ({...film, image: imageUrls[index]}))
+      })
+      .then(films => this.setState({movies: films}))
+  }
 
   handleOrderColor = (event) => {
     if(event.target.parentNode.className.includes('jedi-btn')) {
@@ -65,7 +65,7 @@ class App extends Component {
         handleForm={this.handleForm} 
         handleOrderColor={this.handleOrderColor} 
         orderColor={this.state.orderColor} /> } />
-        {/* <Nav /> */}
+        <Nav />
         <Route exact path='/movies' render={() => {
           return <MoviesContainer movies={this.state.movies} />
         }} />
@@ -75,8 +75,11 @@ class App extends Component {
 
         return (<CharacterContainer characters={characters}/>)
       }} />
-        
-
+      <Route exact path='/movies/characters/favorites' render={() => {
+        return (
+          <FavoritesContainer characters={this.state.movies} />
+        )
+      }} />
       </main>
     )
   }
