@@ -8,6 +8,7 @@ import Nav from '../nav/nav'
 import imageUrls from './imageUrls'
 import SampleData from './SampleData'
 import CharacterContainer from '../characterContainerDir/CharacterContainer.js';
+// import FavoritesContainer from '../FavoritesContainer'
 
 
 class App extends Component {
