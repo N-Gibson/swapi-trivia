@@ -19,23 +19,32 @@ class App extends Component {
       name: '',
       favQuote: '',
       rank: '',
-      formError: ''
+      formError: '',
+
     }
   }
 
-  componentDidMount() {
-    const swapiFilmsUrl = 'https://swapi.co/api/films';
-    apiCalls(swapiFilmsUrl)
-      .then(films => {
-        return films.sort((a, b) => {
-          return a.episode_id - b.episode_id
-        })
-      })
-      .then(films => {
-        return films.map((film, index) => ({...film, image: imageUrls[index]}))
-      })
-      .then(films => this.setState({movies: films}))
-      
+  // componentDidMount() {
+  //   const swapiFilmsUrl = 'https://swapi.co/api/films';
+  //   apiCalls(swapiFilmsUrl)
+  //     .then(films => {
+  //       return films.sort((a, b) => {
+  //         return a.episode_id - b.episode_id
+  //       })
+  //     })
+  //     .then(films => {
+  //       return films.map((film, index) => ({...film, image: imageUrls[index]}))
+  //     })
+  //     .then(films => this.setState({movies: films}))
+  // }
+
+  handleOrderColor = (event) => {
+    console.log('jedi-event', event.target.className)
+    if(event.target.parentNode.className.includes('jedi-btn')) {
+      console.log('Jedi Button!')
+    } else if(event.target.parentNode.className.includes('sith-btn')) {
+      console.log('Sith Button!')
+    }
   }
 
   handleForm = (formName, formQuote, formRank) => {
@@ -49,11 +58,11 @@ class App extends Component {
   }
 
   render() {
-    console.log("state", this.state.movies)
+    // console.log("state", this.state.movies)
     return (
       <main>
-        <Route exact path='/' render={() => <Splash handleForm={this.handleForm}/>} />
-        <Nav />
+        <Route exact path='/' render={() => <Splash handleForm={this.handleForm} handleOrderColor={this.handleOrderColor} />} />
+        {/* <Nav /> */}
         <Route exact path='/movies' render={() => {
           return <MoviesContainer movies={this.state.movies} />
         }} />
