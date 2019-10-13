@@ -1,25 +1,24 @@
 .splash-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 20px;
-  height: 100vh;
+  align-items: center;
   display: flex;
   flex-direction: column;
+  grid-column-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 100vh;
   justify-content: center;
-  align-items: center;
 }
 
 .splash-div {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  height: 210px;
-  /* background-color: blue; */
-  align-items: center;
+  height: 200px;
 }
 
 .splash-starwars-h1 {
-  font-size: 6em;
   color: yellow;
+  font-family: "Star-Jedi";
+  font-size: 5.5em;
   margin: -15%;
   margin-bottom: -10%;
   &#jediColor {
@@ -31,9 +30,8 @@
 }
 
 .splash-starwars-h2 {
-  font-size: 2em;
   color: white;
-  margin: 0;
+  font-size: 2em;
   &#jediColor {
     color: blue;
   }
@@ -43,17 +41,17 @@
 }
 
 form {
+  align-items: center;
+  border-radius: 50px;
+  border: yellow solid 5px;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  /* background-color: blue; */
   height: 500px;
-  width: 800px;
+  justify-content: space-between;
   margin: auto 0px;
-  border: yellow solid 5px;
-  border-radius: 50px;
-  padding: 15px;
-  align-items: center;
+  padding: 25px;
+  text-align: center;
+  width: 500px;
   &#jediColor {
     border: blue solid 5px;
   }
@@ -62,72 +60,70 @@ form {
   }
 }
 
-
 .jedi-or-sith-div {
-  width: 300px;
-  height: 100px;
   display: flex;
+  height: 100px;
   justify-content: space-between;
-  /* background-color: blue; */
   margin: 10px;
+  width: 300px;
 }
 
 .order-button {
   background-color: white;
-  border: none;
   border-radius: 50px;
-  height: 100px;
-  width: 100px;
+  border: none;
   cursor: pointer;
+  height: 100px;
   outline: none;
+  width: 100px;
 }
 
 .jedi-btn {
-  &:hover {
-    box-shadow: 0px 0px 50px 15px rgba(0, 0, 225, .75);
-    background-color: rgba(0, 0, 225, .75);
-  }
   &:focus {
-    box-shadow: 0px 0px 50px 15px rgba(0, 0, 225, .75);
     background-color: rgba(0, 0, 225, .75);
+    box-shadow: 0px 0px 50px 15px rgba(0, 0, 225, .75);
+  }
+  &:hover {
+    background-color: rgba(0, 0, 225, .75);
+    box-shadow: 0px 0px 50px 15px rgba(0, 0, 225, .75);
   }
 }
 
 .sith-btn {
   &:hover {
+    background-color: rgba(255, 0, 0, .75);
     box-shadow: 0px 0px 50px 15px rgba(255, 0, 0, .75);
-    background-color: rgba(255, 0, 0, .75)
   }
   &:focus {
-    box-shadow: 0px 0px 50px 15px rgba(255, 0, 0, .75);
     background-color:rgba(255, 0, 0, .75);
+    box-shadow: 0px 0px 50px 15px rgba(255, 0, 0, .75);
   }
 }
 
-
 .order-icon {
+  background-color: transparent;
+  border-radius: 0;
   height: 80%;
   width: 80%;
-  border-radius: 0;
-  background-color: transparent;
 }
 
 input {
-  width: 400px;
-  margin: 0 auto;
-  height: 50px;
-  font-size: 2em;
-  text-align: center;
-  border: none;
   border-radius: 50px;
+  border: none;
+  font-size: 2em;
+  height: 50px;
+  margin: 0 auto;
+  outline: none;
+  text-align: center;
+  width: 400px;
 }
 
 select {
-  width: 380px;
-  margin: 0 auto;
-  height: 50px;
-  font-size: 2em;
   border: none;
+  font-size: 2em;
+  height: 50px;
+  margin: 0 auto;
+  width: 380px;
   &#jediColor {
     background-color: blue;
     color: white;
@@ -136,25 +132,27 @@ select {
     background-color: red;
     color: white;
   }
-  // display: none;
-  /* border-radius: 50px; */
 }
 
-.favquote-btn {
-  margin-top: 10px;
-  width: 380px;
-  // margin: 0 auto;
-  height: 50px;
-  font-size: 2em;
-  text-align: center;
-  border: none;
+.jump-to-light-speeb-btn{
+  background-color: yellow;
   border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 50px 15px rgba(255, 255, 0, .75);
+  font-size: 2em;
+  height: 50px;
+  margin-top: 10px;
+  text-align: center;
+  width: 380px;
+  cursor: pointer;
   &#jediColor {
     background-color: blue;
     color: white;
+    box-shadow: 0px 0px 50px 15px rgba(0, 0, 225, .75);
   }
   &#sithColor {
     background-color: red;
     color: white;
+    box-shadow: 0px 0px 50px 15px rgba(255, 0, 0, .75);
   }
 }
