@@ -5,8 +5,8 @@ import jediBold from '../../icons/jedi_bold.svg'
 import sithBold from '../../icons/sith_bold.svg'
 
 
-const Splash = ({ handleForm, handleOrderColor, orderColor }) => {
-  console.log('orderColor', orderColor, handleOrderColor)
+const Splash = ({ handleForm, handleOrderColor, orderColor, orderRank }) => {
+  console.log('orderColor', orderRank)
   return (
     <section className='splash-container'>
       <div className='splash-div' >
@@ -32,10 +32,11 @@ const Splash = ({ handleForm, handleOrderColor, orderColor }) => {
         </div>
 
         {/* <input type='text' placeholder='Enter Favorite Quote'></input> */}
-        <select>
-          <option className='padawan' value='Padawan'>Padawan</option>
-          <option className='jedi-knight'  value='Jedi Knight'>Jedi Knight</option>
-          <option className='jedi-master' value='Jedi Master'>Jedi Master</option>
+        <select id={orderColor}>
+          <option value={orderRank[0]}>{orderRank[0]}</option>
+          <option value={orderRank[1]}>{orderRank[1]}</option>
+          <option value={orderRank[2]}>{orderRank[2]}</option>
+
         </select>
         <Link to='/movies'>
           <button type='button' onClick={e => {

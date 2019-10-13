@@ -19,7 +19,7 @@
 
 .splash-starwars-h1 {
   font-size: 6em;
-  color: white;
+  color: yellow;
   margin: -15%;
   margin-bottom: -10%;
   &#jediColor {
@@ -50,7 +50,7 @@ form {
   height: 500px;
   width: 800px;
   margin: auto 0px;
-  border: white solid 5px;
+  border: yellow solid 5px;
   border-radius: 50px;
   padding: 15px;
   align-items: center;
@@ -128,5 +128,14 @@ select {
   height: 50px;
   font-size: 2em;
   border: none;
+  &#jediColor {
+    background-color: blue;
+    color: white;
+  }
+  &#sithColor {
+    background-color: red;
+    color: white;
+  }
+  // display: none;
   /* border-radius: 50px; */
 }
