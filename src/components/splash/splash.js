@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './splash.scss'
 import jediBold from '../../icons/jedi_bold.svg'
@@ -12,7 +12,7 @@ const Splash = ({ handleFormChange, handleOrderColor, orderColor, orderRank, nam
         <button 
         className='jump-to-light-speeb-btn' 
         id={orderColor} 
-        type='button' >Jump to Light Speed</button>
+        type='button'>Jump to Light Speed</button>
       </Link>)
     }
 
@@ -36,13 +36,15 @@ const Splash = ({ handleFormChange, handleOrderColor, orderColor, orderRank, nam
             type='button' 
             onClick={event => handleOrderColor(event)}>
               <img className='order-icon' 
-                src={jediBold} />
+                src={jediBold} 
+                alt='Jedi Order Icon' />
           </button>
           <button className='order-button sith-btn' 
             type='button'
             onClick={event => handleOrderColor(event)}>
             <img className='order-icon' 
-              src={sithBold} />
+              src={sithBold} 
+              alt='Sith Order Icon' />
           </button>
         </div>
         <h2 className='splash-starwars-h2' 
