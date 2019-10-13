@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { apiCalls } from './apiCalls';
-import { Route } from 'react-router-dom'
+import { Route } from 'react-router-dom';
 import Splash from '../splash/splash';
-import MoviesContainer from '../moviesContainerDir/MoviesContainer'
-import Nav from '../nav/nav'
-import imageUrls from './imageUrls'
-import SampleData from './SampleData'
+import MoviesContainer from '../moviesContainerDir/MoviesContainer';
+import Nav from '../nav/nav';
+import imageUrls from './imageUrls';
+import SampleData from './SampleData';
 import CharacterContainer from '../characterContainerDir/characterContainer.js';
+import FavoritesContainer from '../favoritesContainer/FavoritesContainer';
 
 
 class App extends Component {
@@ -21,23 +22,24 @@ class App extends Component {
       rank: '',
       formError: '',
       orderColor: '',
-      orderRank: []
+      orderRank: [],
+      favoriteCharacters: []
     }
   }
 
-  // componentDidMount() {
-  //   const swapiFilmsUrl = 'https://swapi.co/api/films';
-  //   apiCalls(swapiFilmsUrl)
-  //     .then(films => {
-  //       return films.sort((a, b) => {
-  //         return a.episode_id - b.episode_id
-  //       })
-  //     })
-  //     .then(films => {
-  //       return films.map((film, index) => ({...film, image: imageUrls[index]}))
-  //     })
-  //     .then(films => this.setState({movies: films}))
-  // }
+  componentDidMount() {
+    const swapiFilmsUrl = 'https://swapi.co/api/films';
+    apiCalls(swapiFilmsUrl)
+      .then(films => {
+        return films.sort((a, b) => {
+          return a.episode_id - b.episode_id
+        })
+      })
+      .then(films => {
+        return films.map((film, index) => ({...film, image: imageUrls[index]}))
+      })
+      .then(films => this.setState({movies: films}))
+  }
 
   handleOrderColor = (event) => {
     if(event.target.parentNode.className.includes('jedi-btn')) {
@@ -57,8 +59,22 @@ class App extends Component {
     }
   }
 
+  favoriteNewCharacter = (e) => {
+    // let currentFavorites = this.state.favoriteCharacters;
+
+    let characters= this.state.movies.reduce((acc, movie) => {
+      acc.push(...movie.characters)
+      return acc
+    }, [])
+
+    let movies = this.state.movies.map( movie => movie );
+    let foundCharacter = characters.find(character => character.name === e.target.parentNode.children[1].innerText)
+    let favorited = foundCharacter.isFavorite;
+    foundCharacter.isFavorite = !favorited;
+    this.setState({ movies });
+  }
+
   render() {
-    console.log("state", this.state.orderRank)
     return (
       <main>
         <Route exact path='/' render={() => <Splash 
@@ -67,6 +83,7 @@ class App extends Component {
         orderColor={this.state.orderColor} 
         orderRank={this.state.orderRank} /> } />
         {/* <Nav /> */}
+
         <Route exact path='/movies' render={() => {
           return <MoviesContainer movies={this.state.movies} />
         }} />
@@ -74,10 +91,16 @@ class App extends Component {
         const { id } = match.params
         const characters = this.state.movies.find(movie => movie.episode_id === parseInt(id)).characters
 
-        return (<CharacterContainer characters={characters}/>)
+        return (<CharacterContainer characters={characters}  favoriteCharacter={this.favoriteNewCharacter}/>)
       }} />
-        
-
+      <Route exact path='/movies/characters/favorites' render={() => {
+        return (
+          <FavoritesContainer characters={this.state.movies.reduce((acc, movie) => {
+            acc.push(...movie.characters)
+            return acc
+          }, [])} />
+        )
+      }} />
       </main>
     )
   }

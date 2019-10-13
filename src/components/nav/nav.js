@@ -13,6 +13,9 @@ const Nav = () => {
           <button type='button'>Log Out</button>
         </Link>
       </div>
+        <Link to='/movies/characters/favorites'>
+          <button type='button'>Favorite Characters</button>
+        </Link>
     </nav>
   )
 }

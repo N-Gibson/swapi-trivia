@@ -6,16 +6,22 @@ const SampleData = [{
     characters: [{
       films: ["The Phantom Menace"],
       homeworld: ["Mars", "234567890"],
+      id: Date.now(),
+      isFavorite: false,
       name: "Qui-Gon Jinn",
       species: "Human"
     }, {
       films: ["The Phantom Menace"],
       homeworld: ["Naboo", "4500000000"],
+      id: Date.now(),
+      isFavorite: false,
       name: "Roos Tarpals",
       species: "Gungan"
     }, {
       films: ["The Phantom Menace"],
       homeworld: ["Vulpter", "421000000"],
+      id: Date.now(),
+      isFavorite: false,
       name: "Dud Bolt",
       species: "Vulptereen"
     }]

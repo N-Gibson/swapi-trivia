@@ -4,7 +4,7 @@ import MovieCard from '../movieCardDir/movieCard'
 
 
 const MoviesContainer = (props) => {
-  console.log("props.movies[0]", props.movies[0])
+  // console.log("props.movies[0]", props.movies[0])
   return (
     <section className='movie-container'>
       {props.movies.map(movie => {

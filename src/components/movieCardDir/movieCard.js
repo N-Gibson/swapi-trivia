@@ -6,7 +6,7 @@ import './movieCard.scss'
 const MovieCard = (props) => {
   console.log("movieCard", props)
   return (
-    <Link to={`movies/${props.id}/characters`}>
+    <Link to={`/movies/${props.id}/characters`}>
       <article>
         <img src={props.image} />
         <h2>{props.title}</h2>
