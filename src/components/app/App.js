@@ -49,14 +49,9 @@ class App extends Component {
     }
   }
 
-  handleForm = (formName, formQuote, formRank) => {
-    if(formName === '' || formQuote === '') {
-      // console.log("it's empty")
-      this.setState({error: 'Fill it all!'})
-    } else {
-      this.setState({ name: formName, favQuote: formQuote, rank: formRank, error: ''})
-      
-    }
+  handleFormChange = (event) => {
+
+    this.setState({[event.target.name]: event.target.value})
   }
 
   favoriteNewCharacter = (e) => {
@@ -75,18 +70,22 @@ class App extends Component {
   }
 
   render() {
+    console.log('Name:', this.state.name, 'FavQuote:', this.state.favQuote)
     return (
       <main>
         <Route exact path='/' render={() => <Splash 
-        handleForm={this.handleForm} 
+        handleFormChange={this.handleFormChange} 
         handleOrderColor={this.handleOrderColor} 
         orderColor={this.state.orderColor} 
-        orderRank={this.state.orderRank} /> } />
+        orderRank={this.state.orderRank} 
+        name={this.state.name} 
+        favQuote={this.state.favQuote} /> } />
         {/* <Nav /> */}
 
         <Route exact path='/movies' render={() => {
           return <MoviesContainer movies={this.state.movies} />
         }} />
+
       <Route exact path='/movies/:id/characters' render={({match}) => {
         const { id } = match.params
         const characters = this.state.movies.find(movie => movie.episode_id === parseInt(id)).characters
