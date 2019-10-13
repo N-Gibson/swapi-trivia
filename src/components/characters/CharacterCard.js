@@ -11,7 +11,7 @@ const Character = (props) => {
 
   return (
     <article className='character-card'>
-      <button type='button'> ⭐</button>
+      <button type='button' onClick={props.favoriteCharacter}> ⭐</button>
       <p>{name}</p>
       <p>{homeworld[0]}</p>
       <p>{homeworld[1]}</p>
