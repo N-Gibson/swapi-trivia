@@ -139,3 +139,22 @@ select {
   // display: none;
   /* border-radius: 50px; */
 }
+
+.favquote-btn {
+  margin-top: 10px;
+  width: 380px;
+  // margin: 0 auto;
+  height: 50px;
+  font-size: 2em;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  &#jediColor {
+    background-color: blue;
+    color: white;
+  }
+  &#sithColor {
+    background-color: red;
+    color: white;
+  }
+}

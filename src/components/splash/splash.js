@@ -31,15 +31,18 @@ const Splash = ({ handleForm, handleOrderColor, orderColor, orderRank }) => {
           </button>
         </div>
 
-        {/* <input type='text' placeholder='Enter Favorite Quote'></input> */}
         <select id={orderColor}>
           <option value={orderRank[0]}>{orderRank[0]}</option>
           <option value={orderRank[1]}>{orderRank[1]}</option>
           <option value={orderRank[2]}>{orderRank[2]}</option>
-
         </select>
+        <input type='text' placeholder='Enter Favorite Quote'></input>
         <Link to='/movies'>
-          <button type='button' onClick={e => {
+          <button 
+          className='favquote-btn' 
+          id={orderColor}
+          type='button' 
+          onClick={e => {
             // let name = e.target.parentElement.firstChild.value
             // let quote = e.target.parentElement.childNodes[1].value
             // let rank = e.target.parentElement.childNodes[2].value
