@@ -11,6 +11,6 @@ describe('Favorites Container', () => {
   })
 
   it('should match snapshot', () => {
-    expect(wrapper.toMatchSnapshot());
+    expect(wrapper).toMatchSnapshot();
   })
 });
