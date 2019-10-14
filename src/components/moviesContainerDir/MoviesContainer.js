@@ -20,6 +20,7 @@ const MoviesContainer = ({ movies, orderColor, name, favQuote, rank }) => {
             releaseDate={movie.release_date}
             id={movie.episode_id}
             key={movie.episode_id}
+            orderColor={orderColor} 
           />
         })}
       </section>
