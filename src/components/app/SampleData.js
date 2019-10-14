@@ -3,6 +3,7 @@ const SampleData = [{
     image: "https://vignette.wikia.nocookie.net/starwars/images/7/75/EPI_TPM_poster.png/revision/latest?cb=20130822171446",
     release_date: "1999-05-19",
     title: "The Phantom Menace",
+    trailer: 'https://www.youtube.com/watch?v=bD7bpG-zDJQ',
     characters: [{
       films: ["The Phantom Menace"],
       homeworld: ["Mars", "234567890"],
@@ -30,6 +31,7 @@ const SampleData = [{
     image: "https://vignette.wikia.nocookie.net/starwars/images/7/75/EPI_TPM_poster.png/revision/latest?cb=20130822171446",
     release_date: "1999-05-19",
     title: "The Phantom Menace",
+    trailer: 'https://www.youtube.com/watch?v=bD7bpG-zDJQ',
     characters: [{
       films: ["The Phantom Menace"],
       homeworld: ["Mars", "234567890"],
@@ -57,6 +59,7 @@ const SampleData = [{
     image: "https://vignette.wikia.nocookie.net/starwars/images/7/75/EPI_TPM_poster.png/revision/latest?cb=20130822171446",
     release_date: "1999-05-19",
     title: "The Phantom Menace",
+    trailer: 'https://www.youtube.com/watch?v=bD7bpG-zDJQ',
     characters: [{
       films: ["The Phantom Menace"],
       homeworld: ["Mars", "234567890"],
@@ -84,6 +87,7 @@ const SampleData = [{
     image: "https://vignette.wikia.nocookie.net/starwars/images/7/75/EPI_TPM_poster.png/revision/latest?cb=20130822171446",
     release_date: "1999-05-19",
     title: "The Phantom Menace",
+    trailer: 'https://www.youtube.com/watch?v=bD7bpG-zDJQ',
     characters: [{
       films: ["The Phantom Menace"],
       homeworld: ["Mars", "234567890"],
@@ -111,6 +115,7 @@ const SampleData = [{
     image: "https://vignette.wikia.nocookie.net/starwars/images/7/75/EPI_TPM_poster.png/revision/latest?cb=20130822171446",
     release_date: "1999-05-19",
     title: "The Phantom Menace",
+    trailer: 'https://www.youtube.com/watch?v=bD7bpG-zDJQ',
     characters: [{
       films: ["The Phantom Menace"],
       homeworld: ["Mars", "234567890"],
@@ -138,6 +143,7 @@ const SampleData = [{
     image: "https://vignette.wikia.nocookie.net/starwars/images/7/75/EPI_TPM_poster.png/revision/latest?cb=20130822171446",
     release_date: "1999-05-19",
     title: "The Phantom Menace",
+    trailer: 'https://www.youtube.com/watch?v=bD7bpG-zDJQ',
     characters: [{
       films: ["The Phantom Menace"],
       homeworld: ["Mars", "234567890"],
@@ -165,6 +171,7 @@ const SampleData = [{
     image: "https://vignette.wikia.nocookie.net/starwars/images/7/75/EPI_TPM_poster.png/revision/latest?cb=20130822171446",
     release_date: "1999-05-19",
     title: "The Phantom Menace",
+    trailer: 'https://www.youtube.com/watch?v=bD7bpG-zDJQ',
     characters: [{
       films: ["The Phantom Menace"],
       homeworld: ["Mars", "234567890"],

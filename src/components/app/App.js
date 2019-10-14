@@ -35,7 +35,7 @@ class App extends Component {
   //       })
   //     })
   //     .then(films => {
-  //       return films.map((film, index) => ({...film, image: imageUrls[index]}))
+  //       return films.map((film, index) => ({...film, image: imageUrls[index].image, trailer: imageUrls[index].trailer}))
   //     })
   //     .then(films => this.setState({movies: films}))
   // }
