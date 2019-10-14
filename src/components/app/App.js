@@ -10,7 +10,6 @@ import SampleData from './SampleData';
 import CharacterContainer from '../characterContainerDir/characterContainer.js';
 import FavoritesContainer from '../favoritesContainer/FavoritesContainer';
 
-
 class App extends Component {
   constructor() {
     super();
@@ -19,10 +18,10 @@ class App extends Component {
       loading: true,
       name: '',
       favQuote: '',
-      rank: '',
+      rank: 'Initiate',
       formError: '',
       orderColor: '',
-      orderRank: [],
+      orderRank: ['Initiate', 'Gray Master', 'Gray Grandmaster'],
       favoriteCharacters: []
     }
   }
@@ -43,15 +42,19 @@ class App extends Component {
 
   handleOrderColor = (event) => {
     if(event.target.parentNode.className.includes('jedi-btn')) {
-      this.setState({orderColor: 'jediColor', orderRank: ['Padawan', 'Jedi Master', 'Grand Master of the Jedi']})
+      this.setState({orderColor: 'jediColor', orderRank: ['Padawan', 'Jedi Master', 'Grand Master of the Jedi'], rank: 'Padawan'})
     } else if(event.target.parentNode.className.includes('sith-btn')) {
-      this.setState({orderColor: 'sithColor', orderRank: ['Apprentice', 'Sith Master', 'Dark Lord of the Sith']})
+      this.setState({orderColor: 'sithColor', orderRank: ['Apprentice', 'Sith Master', 'Dark Lord of the Sith'], rank: 'Apprentice'})
     }
   }
 
   handleFormChange = (event) => {
-
     this.setState({[event.target.name]: event.target.value})
+  }
+
+  setRank = event => {
+    this.setState({rank: event.target.value})
+    // console.log("setrank", event.target.value)
   }
 
   favoriteNewCharacter = (e) => {
@@ -70,7 +73,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('Name:', this.state.name, 'FavQuote:', this.state.favQuote)
     return (
       <main>
         <Route exact path='/' render={() => <Splash 
@@ -79,11 +81,16 @@ class App extends Component {
         orderColor={this.state.orderColor} 
         orderRank={this.state.orderRank} 
         name={this.state.name} 
-        favQuote={this.state.favQuote} /> } />
-        {/* <Nav /> */}
+        favQuote={this.state.favQuote} 
+        setRank={this.setRank} /> } />
 
         <Route exact path='/movies' render={() => {
-          return <MoviesContainer movies={this.state.movies} />
+          return <MoviesContainer 
+            movies={this.state.movies} 
+            orderColor={this.state.orderColor} 
+            name={this.state.name} 
+            favQuote={this.state.favQuote} 
+            rank={this.state.rank}/>
         }} />
 
       <Route exact path='/movies/:id/characters' render={({match}) => {
