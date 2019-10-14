@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './movieCard.scss'
 
 
-const MovieCard = ({id, image, title, releaseDate, orderColor}) => {
+const MovieCard = ({id, image, title, releaseDate, orderColor, trailer}) => {
   let newReleaseDate = releaseDate.split('-')
   newReleaseDate = `${newReleaseDate[1]}/${newReleaseDate[2]}/${newReleaseDate[0]}`
   return (
@@ -14,6 +14,8 @@ const MovieCard = ({id, image, title, releaseDate, orderColor}) => {
           id={orderColor} >{title}</h2>
         <h3 className='release-date-h3'
           id={orderColor} >{newReleaseDate}</h3>
+          <a className='trailer' 
+            href={trailer}>View Trailer</a>
       </article>
     </Link>
   )
