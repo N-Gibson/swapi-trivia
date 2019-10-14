@@ -54,7 +54,6 @@ class App extends Component {
 
   setRank = event => {
     this.setState({rank: event.target.value})
-    // console.log("setrank", event.target.value)
   }
 
   favoriteNewCharacter = (e) => {
@@ -73,6 +72,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.movies)
     return (
       <main>
         <Route exact path='/' render={() => <Splash 
