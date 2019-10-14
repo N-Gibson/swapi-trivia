@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom';
 import './movieCard.scss'
 
 
-const MovieCard = (props) => {
-  console.log("movieCard", props)
+const MovieCard = ({id, image, title, releaseDate, orderColor}) => {
+  let newReleaseDate = releaseDate.split('-')
+  newReleaseDate = `${newReleaseDate[1]}/${newReleaseDate[2]}/${newReleaseDate[0]}`
   return (
-    <Link to={`/movies/${props.id}/characters`}>
-      <article>
-        <img src={props.image} />
-        <h2>{props.title}</h2>
-        <h3>{props.releaseDate}</h3>
+    <Link className='movie-a-tag' to={`/movies/${id}/characters`}>
+      <article id={orderColor}>
+        <img src={image} />
+        <h2 className='movie-title-h2'
+          id={orderColor} >{title}</h2>
+        <h3 className='release-date-h3'
+          id={orderColor} >{newReleaseDate}</h3>
       </article>
     </Link>
   )
