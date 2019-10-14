@@ -10,7 +10,6 @@ import SampleData from './SampleData';
 import CharacterContainer from '../characterContainerDir/characterContainer.js';
 import FavoritesContainer from '../favoritesContainer/FavoritesContainer';
 
-
 class App extends Component {
   constructor() {
     super();
@@ -19,43 +18,43 @@ class App extends Component {
       loading: true,
       name: '',
       favQuote: '',
-      rank: '',
+      rank: 'Initiate',
       formError: '',
       orderColor: '',
+      orderRank: ['Initiate', 'Gray Master', 'Gray Grandmaster'],
       favoriteCharacters: []
     }
   }
 
-  componentDidMount() {
-    const swapiFilmsUrl = 'https://swapi.co/api/films';
-    apiCalls(swapiFilmsUrl)
-      .then(films => {
-        return films.sort((a, b) => {
-          return a.episode_id - b.episode_id
-        })
-      })
-      .then(films => {
-        return films.map((film, index) => ({...film, image: imageUrls[index]}))
-      })
-      .then(films => this.setState({movies: films}))
-  }
+  // componentDidMount() {
+  //   const swapiFilmsUrl = 'https://swapi.co/api/films';
+  //   apiCalls(swapiFilmsUrl)
+  //     .then(films => {
+  //       return films.sort((a, b) => {
+  //         return a.episode_id - b.episode_id
+  //       })
+  //     })
+  //     .then(films => {
+  //       return films.map((film, index) => ({...film, image: imageUrls[index]}))
+  //     })
+  //     .then(films => this.setState({movies: films}))
+  // }
 
   handleOrderColor = (event) => {
     if(event.target.parentNode.className.includes('jedi-btn')) {
-      this.setState({orderColor: 'jediColor'})
+      this.setState({orderColor: 'jediColor', orderRank: ['Padawan', 'Jedi Master', 'Grand Master of the Jedi'], rank: 'Padawan'})
     } else if(event.target.parentNode.className.includes('sith-btn')) {
-      this.setState({orderColor: 'sithColor'})
+      this.setState({orderColor: 'sithColor', orderRank: ['Apprentice', 'Sith Master', 'Dark Lord of the Sith'], rank: 'Apprentice'})
     }
   }
 
-  handleForm = (formName, formQuote, formRank) => {
-    if(formName === '' || formQuote === '') {
-      // console.log("it's empty")
-      this.setState({error: 'Fill it all!'})
-    } else {
-      this.setState({ name: formName, favQuote: formQuote, rank: formRank, error: ''})
-      
-    }
+  handleFormChange = (event) => {
+    this.setState({[event.target.name]: event.target.value})
+  }
+
+  setRank = event => {
+    this.setState({rank: event.target.value})
+    // console.log("setrank", event.target.value)
   }
 
   favoriteNewCharacter = (e) => {
@@ -74,17 +73,26 @@ class App extends Component {
   }
 
   render() {
-    console.log("state", this.state)
     return (
       <main>
         <Route exact path='/' render={() => <Splash 
-        handleForm={this.handleForm} 
+        handleFormChange={this.handleFormChange} 
         handleOrderColor={this.handleOrderColor} 
-        orderColor={this.state.orderColor} /> } />
-        <Nav />
+        orderColor={this.state.orderColor} 
+        orderRank={this.state.orderRank} 
+        name={this.state.name} 
+        favQuote={this.state.favQuote} 
+        setRank={this.setRank} /> } />
+
         <Route exact path='/movies' render={() => {
-          return <MoviesContainer movies={this.state.movies} />
+          return <MoviesContainer 
+            movies={this.state.movies} 
+            orderColor={this.state.orderColor} 
+            name={this.state.name} 
+            favQuote={this.state.favQuote} 
+            rank={this.state.rank}/>
         }} />
+
       <Route exact path='/movies/:id/characters' render={({match}) => {
         const { id } = match.params
         const characters = this.state.movies.find(movie => movie.episode_id === parseInt(id)).characters
