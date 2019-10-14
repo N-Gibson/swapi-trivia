@@ -26,27 +26,27 @@ class App extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   const swapiFilmsUrl = 'https://swapi.co/api/films';
-  //   apiCalls(swapiFilmsUrl)
-  //     .then(films => {
-  //       return films.sort((a, b) => {
-  //         return a.episode_id - b.episode_id
-  //       })
-  //     })
-  //     .then(films => {
-  //       return films.map((film, index) => ({...film, image: imageUrls[index]}))
-  //     })
-  //     .then(films => this.setState({movies: films}))
-  // }
-
-  handleOrderColor = (event) => {
-    if(event.target.parentNode.className.includes('jedi-btn')) {
-      this.setState({orderColor: 'jediColor', orderRank: ['Padawan', 'Jedi Master', 'Grand Master of the Jedi'], rank: 'Padawan'})
-    } else if(event.target.parentNode.className.includes('sith-btn')) {
-      this.setState({orderColor: 'sithColor', orderRank: ['Apprentice', 'Sith Master', 'Dark Lord of the Sith'], rank: 'Apprentice'})
-    }
+  componentDidMount() {
+    const swapiFilmsUrl = 'https://swapi.co/api/films';
+    apiCalls(swapiFilmsUrl)
+      .then(films => {
+        return films.sort((a, b) => {
+          return a.episode_id - b.episode_id
+        })
+      })
+      .then(films => {
+        return films.map((film, index) => ({...film, image: imageUrls[index]}))
+      })
+      .then(films => this.setState({movies: films}))
   }
+
+  // handleOrderColor = (event) => {
+  //   if(event.target.parentNode.className.includes('jedi-btn')) {
+  //     this.setState({orderColor: 'jediColor', orderRank: ['Padawan', 'Jedi Master', 'Grand Master of the Jedi'], rank: 'Padawan'})
+  //   } else if(event.target.parentNode.className.includes('sith-btn')) {
+  //     this.setState({orderColor: 'sithColor', orderRank: ['Apprentice', 'Sith Master', 'Dark Lord of the Sith'], rank: 'Apprentice'})
+  //   }
+  // }
 
   handleFormChange = (event) => {
     this.setState({[event.target.name]: event.target.value})

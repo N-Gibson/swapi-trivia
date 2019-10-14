@@ -11,6 +11,7 @@ const FavoritesContainer = (props) => {
   }, [])
 
   let character = favoriteCharacters.map(character => <CharacterCard character={character}/>)
+
   return (
     <section className='favorite-characters'>
       <h2 className='favorite-characters-h2'>Favorite Characters</h2>
