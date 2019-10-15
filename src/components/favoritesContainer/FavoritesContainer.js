@@ -15,6 +15,11 @@ const FavoritesContainer = (props) => {
 
   return (
     <>
+    <Nav 
+      orderColor={orderColor} 
+      name={name} 
+      favQuote={favQuote} 
+      rank={rank} />
       <h2 className='favorite-characters-h2'>Favorite Characters</h2>
     <section className='favorite-characters'>
       <p>Number of favorites: {favoriteCharacters.length}</p>

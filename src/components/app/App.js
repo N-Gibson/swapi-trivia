@@ -108,7 +108,11 @@ class App extends Component {
       }} />
       <Route exact path='/movies/characters/favorites' render={() => {
         return (
-          <FavoritesContainer characters={this.state.movies.reduce((acc, movie) => {
+          <FavoritesContainer orderColor={this.state.orderColor} 
+          name={this.state.name} 
+          favQuote={this.state.favQuote} 
+          rank={this.state.rank} 
+          characters={this.state.movies.reduce((acc, movie) => {
             acc.push(...movie.characters)
             return acc
           }, [])} />
