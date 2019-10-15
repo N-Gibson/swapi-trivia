@@ -1,6 +1,7 @@
 import React from 'react'
 import CharacterCard from '../characters/CharacterCard';
-import './FavoritesContainer.scss'
+import './FavoritesContainer.scss';
+import Nav from '../nav/nav';
 
 const FavoritesContainer = (props) => {
   let favoriteCharacters = props.characters.reduce((acc, character) => {
