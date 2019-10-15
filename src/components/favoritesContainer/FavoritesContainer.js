@@ -13,11 +13,13 @@ const FavoritesContainer = (props) => {
   let character = favoriteCharacters.map(character => <CharacterCard character={character}/>)
 
   return (
-    <section className='favorite-characters'>
+    <>
       <h2 className='favorite-characters-h2'>Favorite Characters</h2>
+    <section className='favorite-characters'>
       <p>Number of favorites: {favoriteCharacters.length}</p>
       {character}
     </section>
+    </>
   )
 }
 
