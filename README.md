@@ -36,6 +36,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
+## Contributors
+Noah Gibson | GitHub: N-Gibson
+J. Eduardo Rodriguez | GitHub: JEduardoRJx
+
 ## Screenshots
 
 ![sw_login](https://user-images.githubusercontent.com/48504854/66869344-732efe00-ef5c-11e9-9c14-0465476104bf.png)
