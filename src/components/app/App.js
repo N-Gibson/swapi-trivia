@@ -95,14 +95,16 @@ class App extends Component {
       <Route exact path='/movies/:id/characters' render={({match}) => {
         const { id } = match.params
         const characters = this.state.movies.find(movie => movie.episode_id === parseInt(id)).characters
+        const selectedMovie = this.state.movies.find(movie => movie.episode_id === parseInt(id))
 
         return (<CharacterContainer 
           characters={characters} 
           favoriteCharacter={this.favoriteNewCharacter}
           orderColor={this.state.orderColor} 
-            name={this.state.name} 
-            favQuote={this.state.favQuote} 
-            rank={this.state.rank}/>)
+          name={this.state.name} 
+          favQuote={this.state.favQuote} 
+          rank={this.state.rank}
+          scroll={selectedMovie.opening_crawl} movieTitle={selectedMovie.title} movieNumber={selectedMovie.episode_id}/>)
       }} />
       <Route exact path='/movies/characters/favorites' render={() => {
         return (
@@ -116,5 +118,6 @@ class App extends Component {
     )
   }
 }
+
 
 export default App;
