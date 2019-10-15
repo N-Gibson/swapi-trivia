@@ -1,14 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import characterContainer from './characterContainer';
+import CharacterContainer from './characterContainer'
 
-describe('Character Container', () => {
-  let wrapper
+describe('CharacterContainer', () => {
+  let wrapper;
   beforeEach(() => {
-
+    wrapper = shallow(<CharacterContainer />)
   })
 
-  it('', () => {
-    
+  it.skip('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();    
   })
 })
