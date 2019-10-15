@@ -1,5 +1,6 @@
 import React from 'react';
 import CharacterCard from '../characters/CharacterCard';
+import Nav from '../nav/nav';
 import './characterContainer.scss'
 
 const CharacterContainer = (props) => {
@@ -29,7 +30,9 @@ const CharacterContainer = (props) => {
 
   return (
     <section className='container'>
-      <div className='fade'></div>
+      <div className='fade'>
+        <Nav />
+      </div>
       <div className='star-wars-crawl'>
         <div className='crawl'>
         <div className='title'>
