@@ -56,8 +56,6 @@ class App extends Component {
   }
 
   favoriteNewCharacter = (e) => {
-    // let currentFavorites = this.state.favoriteCharacters;
-
     let characters= this.state.movies.reduce((acc, movie) => {
       acc.push(...movie.characters)
       return acc

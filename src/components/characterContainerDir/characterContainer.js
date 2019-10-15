@@ -9,22 +9,22 @@ const CharacterContainer = ({ characters, favoriteCharacter, orderColor, name, f
     orderColor={orderColor} />)
 
   let episodeNumber
-    if(movieNumber == 1) {
+    if(movieNumber === 1) {
       episodeNumber = 'I'
     }
-    if(movieNumber == 2) {
+    if(movieNumber === 2) {
       episodeNumber = 'II'
     }
-    if(movieNumber == 3) {
+    if(movieNumber === 3) {
       episodeNumber = 'III'
     }
-    if(movieNumber == 4) {
+    if(movieNumber === 4) {
       episodeNumber = 'IV'
     }
-    if(movieNumber == 5) {
+    if(movieNumber === 5) {
       episodeNumber = 'V'
     }
-    if(movieNumber == 6) {
+    if(movieNumber === 6) {
       episodeNumber = 'VI'
     }
 
