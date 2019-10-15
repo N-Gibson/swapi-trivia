@@ -1,14 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import nav from './nav';
+import Nav from './nav';
 
 describe('Character Container', () => {
-  let wrapper
+  let wrapper;
   beforeEach(() => {
+    wrapper = shallow(<Nav />)
 
   })
 
-  it('', () => {
-    
+  it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();    
   })
 })
