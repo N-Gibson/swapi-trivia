@@ -3,7 +3,6 @@ import CharacterCard from '../characters/CharacterCard';
 import './characterContainer.scss'
 import Nav from '../nav/nav'
 
-
 const CharacterContainer = ({ characters, favoriteCharacter, orderColor, name, favQuote, rank, movieNumber, movieTitle, scroll}) => {
   const character = characters.map(character => <CharacterCard character={character} 
     favoriteCharacter={favoriteCharacter}
@@ -50,7 +49,5 @@ const CharacterContainer = ({ characters, favoriteCharacter, orderColor, name, f
       {character}
     </div>
     </section>
-  )
-}
 
 export default CharacterContainer
