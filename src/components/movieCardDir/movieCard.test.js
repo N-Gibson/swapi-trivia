@@ -3,12 +3,15 @@ import { shallow } from 'enzyme';
 import MovieCard from './movieCard';
 
 describe('Character Container', () => {
-  let wrapper
+  let wrapper, mockReleaseDate;
+
   beforeEach(() => {
-    wrapper = shallow(<MovieCard />)
+    mockReleaseDate = '2019-10-10'
+    wrapper = shallow(<MovieCard 
+      releaseDate={mockReleaseDate}/>)
   })
 
-  it.skip('should match snapshot', () => {
+  it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();    
   })
 })

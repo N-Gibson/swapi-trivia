@@ -3,12 +3,28 @@ import { shallow } from 'enzyme';
 import MoviesContainer from './MoviesContainer';
 
 describe('MoviesContainer', () => {
-  let wrapper
+  let wrapper, mockMovies;
+
   beforeEach(() => {
-    wrapper = shallow(<MoviesContainer />)
+    mockMovies = [{
+      episode_id: 1,
+      image: 'imageUrl',
+      release_date: '2019-01-01',
+      title: 'Movie Title',
+      characters: []
+    },
+  {
+    episode_id: 1,
+      image: 'imageUrl',
+      release_date: '2019-01-01',
+      title: 'Movie Title',
+      characters: []
+  }]
+    wrapper = shallow(<MoviesContainer 
+      movies={mockMovies}/>)
   })
 
-  it.skip('should match snapshot', () => {
+  it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();    
   })
 })

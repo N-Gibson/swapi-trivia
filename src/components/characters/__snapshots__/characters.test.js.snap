@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Character should match snapshot 1`] = `undefined`;
+
 exports[`CharacterCard should match snapshot 1`] = `undefined`;
