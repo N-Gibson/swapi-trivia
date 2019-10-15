@@ -28,16 +28,20 @@ const CharacterContainer = (props) => {
     }
 
   return (
-    <section className='character-container'>
-    <div className='fade'></div>
-    <section className='star-wars-crawl'>
-      <div className='crawl'></div>
-      <div className='title'>
-        <h3>{`Episode ${episodeNumber}`}</h3>
-        <h2>{props.movieTitle}</h2>
+    <section className='container'>
+      <div className='fade'></div>
+      <div className='star-wars-crawl'>
+        <div className='crawl'>
+        <div className='title'>
+          <h3>{`Episode ${episodeNumber}`}</h3>
+          <h2>{props.movieTitle}</h2>
+        </div>
+        {props.scroll}
       </div>
-    </section>
+      </div>
+    <div className ='character-container'>
       {character}
+    </div>
     </section>
   )
 }
