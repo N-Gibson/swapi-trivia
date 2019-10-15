@@ -112,6 +112,7 @@ class App extends Component {
           name={this.state.name} 
           favQuote={this.state.favQuote} 
           rank={this.state.rank} 
+          favoriteCharacter={this.favoriteNewCharacter}
           characters={this.state.movies.reduce((acc, movie) => {
             acc.push(...movie.characters)
             return acc

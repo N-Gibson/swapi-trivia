@@ -3,7 +3,7 @@ import CharacterCard from '../characters/CharacterCard';
 import './FavoritesContainer.scss';
 import Nav from '../nav/nav';
 
-const FavoritesContainer = ({ characters, orderColor, name, favQuote, rank}) => {
+const FavoritesContainer = ({ characters, orderColor, name, favQuote, rank, favoriteCharacter}) => {
   let favoriteCharacters = characters.reduce((acc, character) => {
     if(character.isFavorite === true) {
       acc.push(character)
@@ -11,7 +11,7 @@ const FavoritesContainer = ({ characters, orderColor, name, favQuote, rank}) => 
     return acc
   }, [])
 
-  let character = favoriteCharacters.map(character => <CharacterCard character={character}/>)
+  let character = favoriteCharacters.map(character => <CharacterCard character={character} favoriteCharacter={favoriteCharacter}/>)
 
   return (
     <>
