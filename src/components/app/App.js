@@ -108,7 +108,8 @@ class App extends Component {
       }} />
       <Route exact path='/movies/characters/favorites' render={() => {
         return (
-          <FavoritesContainer orderColor={this.state.orderColor} 
+          <FavoritesContainer 
+          orderColor={this.state.orderColor} 
           name={this.state.name} 
           favQuote={this.state.favQuote} 
           rank={this.state.rank} 

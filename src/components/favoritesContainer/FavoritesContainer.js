@@ -11,7 +11,7 @@ const FavoritesContainer = ({ characters, orderColor, name, favQuote, rank, favo
     return acc
   }, [])
 
-  let character = favoriteCharacters.map(character => <CharacterCard character={character} favoriteCharacter={favoriteCharacter}/>)
+  let character = favoriteCharacters.map(character => <CharacterCard character={character} favoriteCharacter={favoriteCharacter} orderColor={orderColor}/>)
 
   return (
     <>
