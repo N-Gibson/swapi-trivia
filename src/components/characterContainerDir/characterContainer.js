@@ -1,13 +1,25 @@
 import React from 'react';
 import CharacterCard from '../characters/CharacterCard';
 import './characterContainer.scss'
+import Nav from '../nav/nav'
 
-const CharacterContainer = (props) => {
-  const character = props.characters.map(character => <CharacterCard character={character} favoriteCharacter={props.favoriteCharacter}/>)
+
+const CharacterContainer = ({ characters, favoriteCharacter, orderColor, name, favQuote, rank}) => {
+  const character = characters.map(character => <CharacterCard character={character} 
+    favoriteCharacter={favoriteCharacter}
+    orderColor={orderColor} />)
+
   return (
-    <section className='character-container'>
-      {character}
-    </section>
+    <>
+      <Nav 
+            orderColor={orderColor} 
+            name={name} 
+            favQuote={favQuote} 
+            rank={rank} />
+      <section className='character-container'>
+        {character}
+      </section>
+    </>
   )
 }
 
