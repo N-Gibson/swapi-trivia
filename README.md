@@ -40,3 +40,4 @@ You will also see any lint errors in the console.
 
 ![sw_login](https://user-images.githubusercontent.com/48504854/66869344-732efe00-ef5c-11e9-9c14-0465476104bf.png)
 ![sw_movies](https://user-images.githubusercontent.com/48504854/66869345-732efe00-ef5c-11e9-9421-37aa2c66f81d.png)
+![sw_char](https://user-images.githubusercontent.com/48504854/66869881-8db5a700-ef5d-11e9-9295-25438a8441b3.png)
