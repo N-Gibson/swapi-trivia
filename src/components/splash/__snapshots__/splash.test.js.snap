@@ -1,3 +1,106 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Splash should match snapshot 1`] = `ShallowWrapper {}`;
+exports[`Splash should match snapshot 1`] = `
+<section
+  className="splash-container"
+>
+  <div
+    className="splash-div"
+  >
+    <h1
+      className="splash-starwars-h1"
+    >
+      Star
+    </h1>
+    <h2
+      className="splash-starwars-h2"
+    >
+      A Trivia Story
+    </h2>
+    <h1
+      className="splash-starwars-h1"
+    >
+      Wars
+    </h1>
+  </div>
+  <form>
+    <input
+      name="name"
+      onChange={[Function]}
+      placeholder="Enter Name"
+      type="text"
+    />
+    <h2
+      className="splash-starwars-h2"
+    >
+      Jedi or Sith
+    </h2>
+    <div
+      className="jedi-or-sith-div"
+    >
+      <button
+        className="order-button jedi-btn"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="Jedi Order Icon"
+          className="order-icon"
+          src="jedi_bold.svg"
+        />
+      </button>
+      <button
+        className="order-button sith-btn"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="Sith Order Icon"
+          className="order-icon"
+          src="sith_bold.svg"
+        />
+      </button>
+    </div>
+    <h2
+      className="splash-starwars-h2"
+    >
+      Rank
+    </h2>
+    <select
+      onChange={[Function]}
+    >
+      <option
+        value="novice"
+      >
+        novice
+      </option>
+      <option
+        value="intermediate"
+      >
+        intermediate
+      </option>
+      <option
+        value="expert"
+      >
+        expert
+      </option>
+    </select>
+    <input
+      name="favQuote"
+      onChange={[Function]}
+      placeholder="Enter Favorite Quote"
+      type="text"
+    />
+    <Link
+      to="/movies"
+    >
+      <button
+        className="jump-to-light-speeb-btn"
+        type="button"
+      >
+        Jump to Light Speed
+      </button>
+    </Link>
+  </form>
+</section>
+`;

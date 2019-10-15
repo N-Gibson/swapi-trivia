@@ -25,19 +25,19 @@ class App extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   const swapiFilmsUrl = 'https://swapi.co/api/films';
-  //   apiCalls(swapiFilmsUrl)
-  //     .then(films => {
-  //       return films.sort((a, b) => {
-  //         return a.episode_id - b.episode_id
-  //       })
-  //     })
-  //     .then(films => {
-  //       return films.map((film, index) => ({...film, image: imageUrls[index].image, trailer: imageUrls[index].trailer}))
-  //     })
-  //     .then(films => this.setState({movies: films}))
-  // }
+  componentDidMount() {
+    const swapiFilmsUrl = 'https://swapi.co/api/films';
+    apiCalls(swapiFilmsUrl)
+      .then(films => {
+        return films.sort((a, b) => {
+          return a.episode_id - b.episode_id
+        })
+      })
+      .then(films => {
+        return films.map((film, index) => ({...film, image: imageUrls[index].image, trailer: imageUrls[index].trailer}))
+      })
+      .then(films => this.setState({movies: films}))
+  }
 
   handleOrderColor = (event) => {
     if(event.target.parentNode.className.includes('jedi-btn')) {
@@ -63,13 +63,13 @@ class App extends Component {
 
     let movies = this.state.movies.map( movie => movie );
     let foundCharacter = characters.find(character => character.name === e.target.parentNode.children[0].innerText)
+    console.log(characters, foundCharacter)
     let favorited = foundCharacter.isFavorite;
     foundCharacter.isFavorite = !favorited;
     this.setState({ movies });
   }
 
   render() {
-    console.log(this.state.movies)
     return (
       <main>
         <Route exact path='/' render={() => <Splash 

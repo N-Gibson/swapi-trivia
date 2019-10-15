@@ -1,3 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CharacterContainer should match snapshot 1`] = `undefined`;
+exports[`CharacterContainer should match snapshot 1`] = `
+<section
+  className="container"
+>
+  <div
+    className="fade"
+  >
+    <Nav
+      favQuote="favQuote"
+      name="name"
+      orderColor="blue"
+      rank="sith"
+    />
+  </div>
+  <div
+    className="star-wars-crawl"
+  >
+    <div
+      className="crawl"
+    >
+      <div
+        className="title"
+      >
+        <h3>
+          Episode I
+        </h3>
+        <h2 />
+      </div>
+      scrolling text
+    </div>
+  </div>
+  <div
+    className="character-container"
+  >
+    <Character
+      character={
+        Object {
+          "films": Array [
+            "The Phantom Menace",
+          ],
+          "homeworld": Array [
+            "Mars",
+            "234567890",
+          ],
+          "id": 1571170247395,
+          "isFavorite": false,
+          "name": "Qui-Gon Jinn",
+          "species": "Human",
+        }
+      }
+      favoriteCharacter={[MockFunction]}
+      orderColor="blue"
+    />
+    <Character
+      character={
+        Object {
+          "films": Array [
+            "The Phantom Menace",
+          ],
+          "homeworld": Array [
+            "Naboo",
+            "4500000000",
+          ],
+          "id": 1571170247395,
+          "isFavorite": false,
+          "name": "Roos Tarpals",
+          "species": "Gungan",
+        }
+      }
+      favoriteCharacter={[MockFunction]}
+      orderColor="blue"
+    />
+    <Character
+      character={
+        Object {
+          "films": Array [
+            "The Phantom Menace",
+          ],
+          "homeworld": Array [
+            "Vulpter",
+            "421000000",
+          ],
+          "id": 1571170247395,
+          "isFavorite": false,
+          "name": "Dud Bolt",
+          "species": "Vulptereen",
+        }
+      }
+      favoriteCharacter={[MockFunction]}
+      orderColor="blue"
+    />
+  </div>
+</section>
+`;

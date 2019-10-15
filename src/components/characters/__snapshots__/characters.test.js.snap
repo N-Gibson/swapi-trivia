@@ -1,5 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Character should match snapshot 1`] = `undefined`;
-
-exports[`CharacterCard should match snapshot 1`] = `undefined`;
+exports[`Character should match snapshot 1`] = `
+<article
+  className="character-card"
+>
+  <h1
+    className="character-name-h1"
+  >
+    Qui-Gon Jinn
+  </h1>
+  <div
+    className="line"
+  />
+  <h2
+    className="character-h2"
+  >
+    Homeworld:
+  </h2>
+  <h2
+    className="character-h2"
+  >
+    Mars
+  </h2>
+  <h2
+    className="character-h2"
+  >
+    Population:
+  </h2>
+  <h2
+    className="character-h2"
+  >
+    234567890
+  </h2>
+  <div
+    className="line"
+  />
+  <h2
+    className="character-h2"
+  >
+    Species:
+  </h2>
+  <h2
+    className="character-h2"
+  >
+    Human
+  </h2>
+  <div
+    className="line"
+  />
+  <h2
+    className="character-h2"
+  >
+    Appears In:
+  </h2>
+  <div>
+    <h2
+      className="character-movie-h2"
+    >
+      <p>
+        The Phantom Menace
+      </p>
+    </h2>
+  </div>
+  <button
+    className="favorite-character"
+    type="button"
+  >
+    Favorite Character
+  </button>
+</article>
+`;

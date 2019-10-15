@@ -1,3 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Character Container should match snapshot 1`] = `ShallowWrapper {}`;
+exports[`Character Container should match snapshot 1`] = `
+<article>
+  <Link
+    className="movie-a-tag"
+    to="/movies/undefined/characters"
+  >
+    <img
+      alt="movie poster"
+    />
+    <h2
+      className="movie-title-h2"
+    >
+      Episode 
+    </h2>
+    <h2
+      className="movie-title-h2"
+    />
+    <h3
+      className="release-date-h3"
+    >
+      10/10/2019
+    </h3>
+  </Link>
+  <a
+    className="trailer"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    View Trailer
+  </a>
+</article>
+`;

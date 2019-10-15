@@ -1,3 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MoviesContainer should match snapshot 1`] = `ShallowWrapper {}`;
+exports[`MoviesContainer should match snapshot 1`] = `
+<Fragment>
+  <Nav />
+  <section
+    className="movie-container"
+  >
+    <MovieCard
+      id={1}
+      image="imageUrl"
+      key="1"
+      releaseDate="2019-01-01"
+      title="Movie Title"
+    />
+    <MovieCard
+      id={1}
+      image="imageUrl"
+      key="1"
+      releaseDate="2019-01-01"
+      title="Movie Title"
+    />
+  </section>
+</Fragment>
+`;

@@ -1,3 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Character Container should match snapshot 1`] = `ShallowWrapper {}`;
+exports[`Character Container should match snapshot 1`] = `
+<nav>
+  <h2
+    className="favorite-quote-h2"
+  />
+  <div
+    className="splash-div"
+  >
+    <h1
+      className="splash-starwars-h1"
+    >
+      Star
+    </h1>
+    <h2
+      className="splash-starwars-h2"
+    >
+      A Trivia Story
+    </h2>
+    <h1
+      className="splash-starwars-h1"
+    >
+      Wars
+    </h1>
+  </div>
+  <div
+    className="user-div"
+  >
+    <h1
+      className="user-name-h1"
+    >
+      Hello undefined
+    </h1>
+    <h2
+      className="user-rank-h2"
+    >
+      A undefined
+    </h2>
+    <Link
+      className="favorite-char-a"
+      to="/movies/characters/favorites"
+    >
+      <button
+        className="favorite-char-btn"
+        type="button"
+      >
+        Fav. Characters
+      </button>
+    </Link>
+    <Link
+      className="logout-a"
+      to="/"
+    >
+      <button
+        className="logout-btn"
+        type="button"
+      >
+        Log Out
+      </button>
+    </Link>
+  </div>
+</nav>
+`;
