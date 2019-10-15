@@ -49,5 +49,7 @@ const CharacterContainer = ({ characters, favoriteCharacter, orderColor, name, f
       {character}
     </div>
     </section>
+  )
+}
 
 export default CharacterContainer

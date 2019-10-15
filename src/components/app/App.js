@@ -4,7 +4,6 @@ import { apiCalls } from './apiCalls';
 import { Route } from 'react-router-dom';
 import Splash from '../splash/splash';
 import MoviesContainer from '../moviesContainerDir/MoviesContainer';
-import Nav from '../nav/nav';
 import imageUrls from './imageUrls';
 import SampleData from './SampleData';
 import CharacterContainer from '../characterContainerDir/characterContainer.js';
