@@ -2,6 +2,8 @@
 
 SWAPI Trivia is a web based application that utalizes the Star Wars API. There are a couple of nested fetches required in order to get all of the data needed for our build. The app displays movies, characters, a log in and has a favorites page, each with their own sets of data.  
 
+The site is deployed live at:  https://n-gibson.github.io/swapi-trivia/
+
 ## Tech 
 
 The tech used in this app include: 
