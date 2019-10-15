@@ -1,8 +1,15 @@
 .favorite-characters{
+  display: grid;
+  grid-gap: 10%;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
   min-height: 100vh;
+  overflow: scroll;
+  padding: 30px;
 }
 
 .favorite-characters-h2 {
   color: #FEFF00;
   font-family: 'Star-Jedi';
+  text-align: center;
 }

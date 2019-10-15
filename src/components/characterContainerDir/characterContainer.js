@@ -4,7 +4,7 @@ import './characterContainer.scss'
 import Nav from '../nav/nav'
 
 const CharacterContainer = ({ characters, favoriteCharacter, orderColor, name, favQuote, rank, movieNumber, movieTitle, scroll}) => {
-  const character = characters.map(character => <CharacterCard character={character} 
+  const character = characters.slice(0, 10).map(character => <CharacterCard character={character} 
     favoriteCharacter={favoriteCharacter}
     orderColor={orderColor} />)
 
