@@ -1,14 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CharacterCard from './CharacterCard';
+import Character from './CharacterCard.js';
 
-describe('CharacterCard', () => {
-  let wrapper
+describe('Character', () => {
+
   beforeEach(() => {
-    wrapper = shallow(<CharacterCard />)
+    let wrapper = shallow(<Character />)
   })
 
-  it.skip('should match snapshot', () => {
-    expect(wrapper).toMatchSnapshot();
+  it('should match snapshot', () => {
+    console.log(wrapper)
   })
+
+  // it('should match snapshot', () => {
+  //   console.log(wrapper)
+  //   expect(wrapper).toMatchSnapshot();
+  // })
 })
