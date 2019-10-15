@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/swapi-trivia/static/css/main.3c687c18.chunk.css",
+    "main.js": "/swapi-trivia/static/js/main.73fa3752.chunk.js",
+    "main.js.map": "/swapi-trivia/static/js/main.73fa3752.chunk.js.map",
+    "runtime-main.js": "/swapi-trivia/static/js/runtime-main.ac423d25.js",
+    "runtime-main.js.map": "/swapi-trivia/static/js/runtime-main.ac423d25.js.map",
+    "static/js/2.c723e9df.chunk.js": "/swapi-trivia/static/js/2.c723e9df.chunk.js",
+    "static/js/2.c723e9df.chunk.js.map": "/swapi-trivia/static/js/2.c723e9df.chunk.js.map",
+    "index.html": "/swapi-trivia/index.html",
+    "precache-manifest.da5fd37e9c90848ef4045da209e23fa5.js": "/swapi-trivia/precache-manifest.da5fd37e9c90848ef4045da209e23fa5.js",
+    "service-worker.js": "/swapi-trivia/service-worker.js",
+    "static/css/main.3c687c18.chunk.css.map": "/swapi-trivia/static/css/main.3c687c18.chunk.css.map",
+    "static/media/jedi_bold.svg": "/swapi-trivia/static/media/jedi_bold.fa01db36.svg",
+    "static/media/sith_bold.svg": "/swapi-trivia/static/media/sith_bold.50ee4c43.svg",
+    "static/media/App.scss": "/swapi-trivia/static/media/starjedi-webfont.a00bdb76.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ac423d25.js",
+    "static/js/2.c723e9df.chunk.js",
+    "static/css/main.3c687c18.chunk.css",
+    "static/js/main.73fa3752.chunk.js"
+  ]
+}
