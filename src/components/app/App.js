@@ -97,17 +97,14 @@ class App extends Component {
         const characters = this.state.movies.find(movie => movie.episode_id === parseInt(id)).characters
         const selectedMovie = this.state.movies.find(movie => movie.episode_id === parseInt(id))
 
-<<<<<<< HEAD
-        return (<CharacterContainer characters={characters}  favoriteCharacter={this.favoriteNewCharacter} scroll={selectedMovie.opening_crawl} movieTitle={selectedMovie.title} movieNumber={selectedMovie.episode_id}/>)
-=======
         return (<CharacterContainer 
           characters={characters} 
           favoriteCharacter={this.favoriteNewCharacter}
           orderColor={this.state.orderColor} 
-            name={this.state.name} 
-            favQuote={this.state.favQuote} 
-            rank={this.state.rank}/>)
->>>>>>> 6061be50edf6a3f8aeb1a8890b856e87f640a0c7
+          name={this.state.name} 
+          favQuote={this.state.favQuote} 
+          rank={this.state.rank}
+          scroll={selectedMovie.opening_crawl} movieTitle={selectedMovie.title} movieNumber={selectedMovie.episode_id}/>)
       }} />
       <Route exact path='/movies/characters/favorites' render={() => {
         return (
