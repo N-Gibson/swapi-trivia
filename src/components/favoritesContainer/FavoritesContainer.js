@@ -13,6 +13,12 @@ const FavoritesContainer = ({ characters, orderColor, name, favQuote, rank, favo
 
   let character = favoriteCharacters.map(character => <CharacterCard character={character} favoriteCharacter={favoriteCharacter} orderColor={orderColor}/>)
 
+  let favCharPrompt = (
+        <p className='fav-char-prompt'>
+          Please favorite some characters!
+        </p>
+      )
+
   return (
     <>
     <Nav 
@@ -23,7 +29,7 @@ const FavoritesContainer = ({ characters, orderColor, name, favQuote, rank, favo
       <h2 className='favorite-characters-h2'>Favorite Characters</h2>
     <section className='favorite-characters'>
       <p>Number of favorites: {favoriteCharacters.length}</p>
-      {character}
+      {favoriteCharacters.length === 0 ? favCharPrompt : character}
     </section>
     </>
   )
