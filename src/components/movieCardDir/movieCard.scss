@@ -1,5 +1,5 @@
 article {
-  height: 525px;
+  height: 575px;
   width: 300px;
   background-color: yellow;
   padding: 10px;
@@ -52,4 +52,15 @@ img {
   text-decoration: none;
   color: black;
   margin: auto;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-top: auto;
+  &#jediColor {
+    // background-color: blue;
+    color: white;
+  }
+  &#sithColor {
+    // background-color: red;
+    color: white;
+  }
 }

@@ -1,7 +1,15 @@
 import React from 'react';
 import CharacterCard from '../characters/CharacterCard';
 import './characterContainer.scss'
+import Nav from '../nav/nav'
 
+
+const CharacterContainer = ({ characters, favoriteCharacter, orderColor, name, favQuote, rank}) => {
+  const character = characters.map(character => <CharacterCard character={character} 
+    favoriteCharacter={favoriteCharacter}
+    orderColor={orderColor} />)
+
+<<<<<<< HEAD
 const CharacterContainer = (props) => {
   console.log('char cont props', props.scroll)
   console.log(props.movieTitle)
@@ -43,6 +51,19 @@ const CharacterContainer = (props) => {
       {character}
     </div>
     </section>
+=======
+  return (
+    <>
+      <Nav 
+            orderColor={orderColor} 
+            name={name} 
+            favQuote={favQuote} 
+            rank={rank} />
+      <section className='character-container'>
+        {character}
+      </section>
+    </>
+>>>>>>> 6061be50edf6a3f8aeb1a8890b856e87f640a0c7
   )
 }
 

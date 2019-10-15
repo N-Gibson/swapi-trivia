@@ -2,13 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import MoviesContainer from './MoviesContainer';
 
-describe('Character Container', () => {
+describe('MoviesContainer', () => {
   let wrapper
   beforeEach(() => {
-
+    wrapper = shallow(<MoviesContainer />)
   })
 
-  it('', () => {
-    
+  it.skip('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();    
   })
 })
