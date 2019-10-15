@@ -11,7 +11,8 @@ const MovieCard = ({id, image, title, releaseDate, orderColor, trailer}) => {
     <article id={orderColor}>
       <Link className='movie-a-tag' 
         to={`/movies/${id}/characters`} >
-        <img src={image} />
+        <img src={image} 
+          alt='movie poster'/>
         <h2 className='movie-title-h2'
         id={orderColor}>Episode {id}</h2>
         <h2 className='movie-title-h2'
@@ -22,7 +23,8 @@ const MovieCard = ({id, image, title, releaseDate, orderColor, trailer}) => {
         <a className='trailer' 
           href={trailer}
           id={orderColor}
-          target='_blank'>View Trailer</a>
+          target='_blank'
+          rel="noopener noreferrer">View Trailer</a>
     </article>
   )
 }
