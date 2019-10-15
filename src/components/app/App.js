@@ -13,7 +13,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: SampleData,
+      movies: [],
       loading: true,
       name: '',
       favQuote: '',
