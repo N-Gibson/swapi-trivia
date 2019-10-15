@@ -3,8 +3,8 @@ import CharacterCard from '../characters/CharacterCard';
 import './FavoritesContainer.scss';
 import Nav from '../nav/nav';
 
-const FavoritesContainer = (props) => {
-  let favoriteCharacters = props.characters.reduce((acc, character) => {
+const FavoritesContainer = ({ characters, orderColor, name, favQuote, rank}) => {
+  let favoriteCharacters = characters.reduce((acc, character) => {
     if(character.isFavorite === true) {
       acc.push(character)
     }
@@ -16,10 +16,10 @@ const FavoritesContainer = (props) => {
   return (
     <>
     <Nav 
-      orderColor={props.orderColor} 
-      name={props.name} 
-      favQuote={props.favQuote} 
-      rank={props.rank} />
+      orderColor={orderColor} 
+      name={name} 
+      favQuote={favQuote} 
+      rank={rank} />
       <h2 className='favorite-characters-h2'>Favorite Characters</h2>
     <section className='favorite-characters'>
       <p>Number of favorites: {favoriteCharacters.length}</p>
