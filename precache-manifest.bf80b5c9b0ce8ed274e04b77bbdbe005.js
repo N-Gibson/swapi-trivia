@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7269d814190edd10b728b6207482e2f2",
+    "revision": "780dca2d5160711a878f7c47ee2a1e29",
     "url": "/swapi-trivia/index.html"
   },
   {
-    "revision": "98a1352e04ad2d2f8729",
+    "revision": "1c0d0ef35a3d8d8b3576",
     "url": "/swapi-trivia/static/css/main.3c687c18.chunk.css"
   },
   {
-    "revision": "0affb8d0386317f8297d",
-    "url": "/swapi-trivia/static/js/2.c723e9df.chunk.js"
+    "revision": "e2054a915c7f582ed333",
+    "url": "/swapi-trivia/static/js/2.0d4bf221.chunk.js"
   },
   {
-    "revision": "98a1352e04ad2d2f8729",
-    "url": "/swapi-trivia/static/js/main.73fa3752.chunk.js"
+    "revision": "1c0d0ef35a3d8d8b3576",
+    "url": "/swapi-trivia/static/js/main.27c113f7.chunk.js"
   },
   {
     "revision": "4d91dc8747153c95bca8",
